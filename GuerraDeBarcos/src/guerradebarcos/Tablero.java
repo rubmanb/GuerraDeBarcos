@@ -70,90 +70,146 @@ public class Tablero {
             columna = (int) Math.floor(Math.random() * (9 - 0));
             posVH = (int) Math.floor(Math.random() * (1 - 0 + 1));
             if (i == 1) {
-                barco = 'e';
+                barco = 'e'; // e -> Barco enorme
                 tamanioBarco = 5;
             } else if (i == 2) {
-                barco = 'g';
+                barco = 'g'; // g -> Barco grande
                 tamanioBarco = 4;
             } else if (i == 3) {
-                barco = 'm';
+                barco = 'm'; //m -> Barco mediano
                 tamanioBarco = 3;
             } else {
-                barco = 'p';
+                barco = 'p'; //p -> Barco pequeño
                 tamanioBarco = 2;
             }
 
-            if ((fila >= 0 && fila <= 4) && (columna >= 0 && columna <= 4) && (CASILLAAGUA != 'e' || CASILLAAGUA != 'g' || CASILLAAGUA != 'm' || CASILLAAGUA != 'p')) {
+            //posicionar los barcos en el tablero
+            if ((fila >= 0 && fila <= 4) && (columna >= 0 && columna <= 4) && (dimensionesTablero[fila][columna] == '~')) {
                 dimensionesTablero[fila][columna] = barco;
-                if (posVH == 0 && CASILLAAGUA == '~') {
+                if (posVH == 0) {
                     for (int j = 1; j < tamanioBarco; j++) {
                         columna++;
-                        dimensionesTablero[fila][columna] = barco;
+                        if (dimensionesTablero[fila][columna] == '~') {
+                            dimensionesTablero[fila][columna] = barco;
+                        } else {
+                            break;
+                        }
                     }
-                } else if (posVH == 1 && CASILLAAGUA == '~') {
+                } else if (posVH == 1) {
                     for (int j = 1; j < tamanioBarco; j++) {
                         fila++;
-                        dimensionesTablero[fila][columna] = barco;
+                        if (dimensionesTablero[fila][columna] == '~') {
+                            dimensionesTablero[fila][columna] = barco;
+                        } else {
+                            break;
+                        }
                     }
                 }
-
-            } else if ((fila >= 0 && fila <= 4) && (columna >= 5 && columna <= 9) && (CASILLAAGUA != 'e' || CASILLAAGUA != 'g' || CASILLAAGUA != 'm' || CASILLAAGUA != 'p')) {
+            } else if ((fila >= 0 && fila <= 4) && (columna >= 5 && columna <= 9) && (dimensionesTablero[fila][columna] == '~')) {
                 dimensionesTablero[fila][columna] = barco;
-                if (posVH == 0 && CASILLAAGUA == '~') {
+                if (posVH == 0) {
                     for (int j = 1; j < tamanioBarco; j++) {
                         columna--;
-                        dimensionesTablero[fila][columna] = barco;
+                        if (dimensionesTablero[fila][columna] == '~') {
+                            dimensionesTablero[fila][columna] = barco;
+                        } else {
+                            break;
+                        }
                     }
-                } else if (posVH == 1 && CASILLAAGUA == '~') {
+                } else if (posVH == 1) {
                     for (int j = 1; j < tamanioBarco; j++) {
                         fila++;
-                        dimensionesTablero[fila][columna] = barco;
+                        if (dimensionesTablero[fila][columna] == '~') {
+                            dimensionesTablero[fila][columna] = barco;
+                        } else {
+                            break;
+                        }
                     }
                 }
-            } else if ((fila >= 5 && fila <= 9) && (columna >= 5 && columna <= 9) && (CASILLAAGUA != 'e' || CASILLAAGUA != 'g' || CASILLAAGUA != 'm' || CASILLAAGUA != 'p')) {
+            } else if ((fila >= 5 && fila <= 9) && (columna >= 5 && columna <= 9) && (dimensionesTablero[fila][columna] == '~')) {
                 dimensionesTablero[fila][columna] = barco;
-                if (posVH == 0 && CASILLAAGUA == '~') {
+                if (posVH == 0) {
                     for (int j = 1; j < tamanioBarco; j++) {
                         columna--;
-                        dimensionesTablero[fila][columna] = barco;
+                        if (dimensionesTablero[fila][columna] == '~') {
+                            dimensionesTablero[fila][columna] = barco;
+                        } else {
+                            break;
+                        }
                     }
-                } else if (posVH == 1 && CASILLAAGUA == '~') {
+                } else if (posVH == 1) {
                     for (int j = 1; j < tamanioBarco; j++) {
                         fila--;
-                        dimensionesTablero[fila][columna] = barco;
+                        if (dimensionesTablero[fila][columna] == '~') {
+                            dimensionesTablero[fila][columna] = barco;
+                        } else {
+                            break;
+                        }
                     }
                 }
-            } else if ((fila >= 5 && fila <= 9) && (columna >= 0 && columna <= 4) && (CASILLAAGUA != 'e' || CASILLAAGUA != 'g' || CASILLAAGUA != 'm' || CASILLAAGUA != 'p')) {
+            } else if ((fila >= 5 && fila <= 9) && (columna >= 0 && columna <= 4) && (dimensionesTablero[fila][columna] == '~')) {
                 dimensionesTablero[fila][columna] = barco;
-                if (posVH == 0 && CASILLAAGUA == '~') {
+                if (posVH == 0) {
                     for (int j = 1; j < tamanioBarco; j++) {
                         columna++;
-                        dimensionesTablero[fila][columna] = barco;
+                        if (dimensionesTablero[fila][columna] == '~') {
+                            dimensionesTablero[fila][columna] = barco;
+                        } else {
+                            break;
+                        }
                     }
-                } else if (posVH == 1 && CASILLAAGUA == '~') {
+                } else if (posVH == 1) {
                     for (int j = 1; j < tamanioBarco; j++) {
                         fila--;
-                        dimensionesTablero[fila][columna] = barco;
+                        if (dimensionesTablero[fila][columna] == '~') {
+                            dimensionesTablero[fila][columna] = barco;
+                        } else {
+                            break;
+                        }
                     }
                 }
             }
-
         }
-
     }
-    
-    public static void lineaTitulo(int n, char c){
+
+    public static void lineaTitulo(int n, char c) {
         for (int i = 0; i < n; i++) {
             System.out.print(c);
-        }System.out.println();
+        }
+        System.out.println();
     }
-    public static void tituloJuego(String s){
+
+    public static void tituloJuego(String s) {
         lineaTitulo(s.length(), '*');
         System.out.println(s);
         lineaTitulo(s.length(), '*');
         System.out.println();
     }
     
+    public static void bomba(int fila, int columna){
+        int contadorBarcoE = 0;
+        int contadorBarcoG = 0;
+        int contadorBarcoM = 0;
+        int contadorBarcoP = 0;
+        if(dimensionesTablero[fila][columna] == '~'){
+            System.out.println("AGUA!!");
+        }else if(dimensionesTablero[fila][columna] == 'e' || dimensionesTablero[fila][columna] == 'g' || dimensionesTablero[fila][columna] == 'm'
+                || dimensionesTablero[fila][columna] == 'p'){
+                System.out.println("TOCADO!!");
+                if(dimensionesTablero[fila][columna] == 'e'){
+                    contadorBarcoE++;
+                }else if(dimensionesTablero[fila][columna] == 'g'){
+                    contadorBarcoG++;
+                }else if(dimensionesTablero[fila][columna] == 'm'){
+                    contadorBarcoM++;
+                }else if(dimensionesTablero[fila][columna] == 'p'){
+                    contadorBarcoP++;
+                }
+        }else{
+            System.out.println("Posición incorrecta! Estás fuera de los límites del tablero.");
+        }
+        
+    }
 
     public static char[][] getDimensionesTablero() {
 
