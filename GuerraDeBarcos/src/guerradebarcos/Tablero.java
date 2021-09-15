@@ -141,6 +141,19 @@ public class Tablero {
         }
 
     }
+    
+    public static void lineaTitulo(int n, char c){
+        for (int i = 0; i < n; i++) {
+            System.out.print(c);
+        }System.out.println();
+    }
+    public static void tituloJuego(String s){
+        lineaTitulo(s.length(), '*');
+        System.out.println(s);
+        lineaTitulo(s.length(), '*');
+        System.out.println();
+    }
+    
 
     public static char[][] getDimensionesTablero() {
 
@@ -158,6 +171,7 @@ public class Tablero {
         // TODO code application logic here
 
         Tablero tab = new Tablero();
+        tituloJuego("HUNDIR LA FLOTA");
         mostrarTablero(tab);
     }
 
