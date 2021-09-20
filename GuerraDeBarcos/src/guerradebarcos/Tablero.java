@@ -253,8 +253,8 @@ public class Tablero {
         int posVH; //1 = vertical, 0 = horizontal
         int tamanioBarco;
         for (int i = 1; i < 6; i++) {
-            fila = (int) Math.floor(Math.random() * (9 - 1));
-            columna = (int) Math.floor(Math.random() * (9 - 1));
+            fila = (int) Math.floor(Math.random() * (9 - 0));
+            columna = (int) Math.floor(Math.random() * (9 - 0));
             posVH = (int) Math.floor(Math.random() * (1 - 0 + 1));
             if (i == 1) {
                 barco = 'e'; // e -> Barco enorme
